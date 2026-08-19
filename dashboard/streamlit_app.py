@@ -9,8 +9,17 @@ st.title("📈 Sales Forecast Dashboard")
 st.markdown("See predicted sales for the next 30 days, and how accurate our predictions have been.")
 
 # Load data
-predictions = pd.read_csv('../data/predictions_multi.csv')
-future = pd.read_csv('../data/future_forecast.csv')
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+predictions = pd.read_csv(
+    os.path.join(BASE_DIR, '..', 'data', 'predictions_multi.csv')
+)
+
+future = pd.read_csv(
+    os.path.join(BASE_DIR, '..', 'data', 'future_forecast.csv')
+)
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 predictions = pd.read_csv(os.path.join(BASE_DIR, '..', 'data', 'predictions_multi.csv'))
