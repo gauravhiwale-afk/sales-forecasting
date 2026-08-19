@@ -1,6 +1,8 @@
 venv/
 .venv/
 data/*.csv
+!data/predictions_multi.csv
+!data/future_forecast.csv
 __pycache__/
 *.pyc
 .ipynb_checkpoints/

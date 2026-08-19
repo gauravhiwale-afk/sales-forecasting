@@ -11,8 +11,10 @@ st.markdown("See predicted sales for the next 30 days, and how accurate our pred
 # Load data
 predictions = pd.read_csv('../data/predictions_multi.csv')
 future = pd.read_csv('../data/future_forecast.csv')
-predictions['date'] = pd.to_datetime(predictions['date'])
-future['date'] = pd.to_datetime(future['date'])
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+predictions = pd.read_csv(os.path.join(BASE_DIR, '..', 'data', 'predictions_multi.csv'))
+future = pd.read_csv(os.path.join(BASE_DIR, '..', 'data', 'future_forecast.csv'))
 
 # Sidebar dropdown
 st.sidebar.header("Choose what to view")
